@@ -1,0 +1,36 @@
+Here is a description of the files contained in this folder.
+
+Main.java
+This contains the program entry point (main method).
+It creates a table-driven lexer and invokes it on each command-line
+argument. It creates a coded lexer and invokes it on each
+command-line argument.
+
+Token.java
+This defines an enum that are the token names.
+
+Lexer.java
+This defines an interface for all lexers to adhere to, namely they
+must implement a nextToken() method.
+
+StringLexer.java
+This defines an abstract class of a lexer that uses a string as
+the input source. It provides some helpful methods for navigating
+the characters of the string input.
+
+IfTableLexer.java
+This is a concrete class that extends StringLexer, so it has access
+to the helpful character navigation methods. It defines a 
+state-transition table for the given problem (an IF token). It uses
+the table in the nextToken() method as it reads characters and 
+changes states.
+
+IfCodeLexer.java
+This is a concrete class that extends StringLexer, so it has access
+to the helpful character navigation methods. It uses a nested selection
+statement (switch with nested if-else statements) to change states and
+react to input characters.
+
+IfTokenDesign.png
+UML class diagram of the design showing the relationships between
+these various classes.
