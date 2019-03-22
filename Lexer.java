@@ -3,7 +3,7 @@
  *
  * Lexer behavior specification.
  *
- * @author Dr. Fenwick
+ * @author Dr. Fenwick & Josh ELliott
  * @version Spring 2019
  */
 

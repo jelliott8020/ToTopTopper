@@ -5,7 +5,7 @@
  * stream input that is a simple String object. (Other concrete implemenations
  * could work on char stream from files, etc.)
  *
- * @author Dr. Fenwick
+ * @author Dr. Fenwick & Josh Elliott
  * @version Spring 2019
  */
 

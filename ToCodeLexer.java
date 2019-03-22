@@ -1,17 +1,17 @@
 /**
  * IfCodeLexer.java
  *
- * Concrete implementation of StringLexer for an IF token assignment.
+ * Concrete implementation of StringLexer for the ToTopTopper assignment
  *
  * Here is where we code up the FSM!!
  *
- * @author Dr. Fenwick
+ * @author Dr. Fenwick & Josh Elliott
  * @version Spring 2019
  */
 
-public class IfCodeLexer extends StringLexer {
+public class ToCodeLexer extends StringLexer {
 
-	public IfCodeLexer(String input) {
+	public ToCodeLexer(String input) {
 		super(input);
 	}
 
@@ -21,43 +21,49 @@ public class IfCodeLexer extends StringLexer {
 		if (!hasNextChar())
 			return Token.EOI_TOK;
 
-		int state = 0;
+		int state = 1;
 		while (hasNextChar()) {
 			char c = nextChar();
 
 			switch (state) {
-			case 0:
-				if (c == 'i')
-					state = 1;
-				else
-					state = 3;
-				break;
 			case 1:
-				if (c == 'f')
+				if (c == 't')
 					state = 2;
 				else
-					state = 3;
+					state = 5;
 				break;
 			case 2:
-				// shouldn't have anymore input?
-				state = 3;
+				if (c == 'o')
+					state = 3;
+				else
+					state = 5;
 				break;
 			case 3:
-				// shouldn't have anymore input?
-				state = 3;
+				if (c == 'p')
+					state = 4;
+				else
+					state = 5;
+				break;
+			case 4:
+				state = 5;
+				break;
+			case 5:
+				state = 5;
 				break;
 			default:
-				// shouldn't have anymore input?
-				state = 3;
+				state = 5;
 				break;
 			}
 
 			// Deal with "final" states
 			switch (state) {
-			case 2:
-				tok = Token.IF_TOK;
-				break;
 			case 3:
+				tok = Token.TO_TOK;
+				break;
+			case 4:
+				tok = Token.TOP_TOK;
+				break;
+			case 5:
 				return Token.ERR_TOK;
 			}
 		}

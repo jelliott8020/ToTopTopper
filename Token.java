@@ -11,7 +11,7 @@
  * Token.EOP_TOK, etc. names instead. Just don't use the same value for two
  * tokens!
  *
- * @author Dr. Fenwick
+ * @author Dr. Fenwick & Josh Elliott
  * @version Spring 2019
  */
 
@@ -20,7 +20,7 @@ public enum Token {
 	INIT_TOK, ERR_TOK
 
 	// Custom tokens can go here.
-	, IF_TOK, INT_TOK, NAME_TOK
+	, TO_TOK, TOP_TOK, NAME_TOK
 
 	, EOI_TOK;
 }

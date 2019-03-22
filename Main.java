@@ -1,13 +1,13 @@
 public class Main {
 	public static void main(String[] args) {
-		System.out.println("Processing args using IfTableLexer...");
+		System.out.println("Processing args using ToTableLexer...");
 		for (String s : args) {
-			runLexer(new IfTableLexer(s));
+			runLexer(new ToTableLexer(s));
 		}
 		System.out.println();
-		System.out.println("Processing args using IfCodeLexer...");
+		System.out.println("Processing args using ToCodeLexer...");
 		for (String s : args) {
-			runLexer(new IfCodeLexer(s));
+			runLexer(new ToCodeLexer(s));
 		}
 	}
 
